@@ -21,36 +21,36 @@ function setup() {
 
   createCanvas(600,200)
   
-  //create a trex sprite
+  //crie um sprite de trex
   trex = createSprite(50,160,20,50);
   trex.addAnimation("running", trex_running);
   trex.scale = 0.5;
   
-  //create a ground sprite
+  //crie sprite ground (solo)
   ground = createSprite(200,180,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   ground.velocityX = -4;
   
-  //creating invisible ground
+  //crie um solo invisível
   invisibleGround = createSprite(200,190,400,10);
   invisibleGround.visible = false;
   
-  //generate random numbers
+  //gerar números aleatórios
   var rand =  Math.round(random(1,100))
   console.log(rand)
 
 }
 
 function draw() {
-  //set background color
+  //definir cor do plano de fundo
   background(180);
   
   console.log(trex.y)
   
   
   
-  // jump when the space key is pressed
+  // pulando o trex ao pressionar a tecla de espaço
   if(keyDown("space")&& trex.y >= 100) {
     trex.velocityY = -10;
   }
@@ -61,18 +61,18 @@ function draw() {
     ground.x = ground.width/2;
   }
   
-  //stop trex from falling down
+  //impedir que o trex caia
   trex.collide(invisibleGround);
   
-  //Spawn Clouds
+  //Gerar Nuvens
   spawnClouds()
   
   drawSprites();
 }
 
-//function to spawn the clouds
+//função para gerar as nuvens
 function spawnClouds(){
- // write your code here 
+ //escreva seu código aqui
  
 }
 
